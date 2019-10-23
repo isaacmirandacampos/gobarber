@@ -11,7 +11,7 @@ class AppointmentController {
   async index(req, res) {
     const { page = 1 } = req.query;
     const appointments = await Appointment.findAll({
-      where: { user_id: req.userId, canceled_id: null },
+      where: { user_id: req.userId, canceled_at: null },
       irder: ['date'],
       attributes: ['id', 'date'],
       limit: 20,
@@ -70,7 +70,7 @@ class AppointmentController {
     const checkAvailability = await Appointment.findOne({
       where: {
         provider_id,
-        canceled_id: null,
+        canceled_at: null,
         date: hourStart,
       },
     });
@@ -118,7 +118,7 @@ class AppointmentController {
       });
     }
 
-    appointment.canceled_id = new Date();
+    appointment.canceled_at = new Date();
     await appointment.save();
     return res.json(appointment);
   }

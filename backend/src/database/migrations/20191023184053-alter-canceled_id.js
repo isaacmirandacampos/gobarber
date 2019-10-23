@@ -1,21 +1,17 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.changeColumn('appointments', 'canceled_id', {
-      canceled_at: {
-        type: Sequelize.DATA,
-        allowNull: true,
-        defaultValue: null,
-      },
-    });
+  up: queryInterface => {
+    return queryInterface.renameColumn(
+      'appointments',
+      'canceled_id',
+      'canceled_at'
+    );
   },
 
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.changeColumn('users', 'canceled_id', {
-      canceled_id: {
-        type: Sequelize.INTERGER,
-        allowNull: true,
-        defaultValue: null,
-      },
-    });
+  down: queryInterface => {
+    return queryInterface.renameColumn(
+      'appointments',
+      'canceled_at',
+      'canceled_id'
+    );
   },
 };
