@@ -110,14 +110,13 @@ class AppointmentController {
         error: "you don't have permission to cancel this appointment",
       });
     }
-    const dateWithSub = subHours(appointment.date, 2);
 
+    const dateWithSub = subHours(appointment.date, 2);
     if (isBefore(dateWithSub, new Date())) {
       return res.status(401).json({
         error: 'you can only cancel appointments 2 hours in advance',
       });
     }
-
     appointment.canceled_at = new Date();
     await appointment.save();
     return res.json(appointment);
