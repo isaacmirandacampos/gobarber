@@ -28,3 +28,8 @@ personalização de email => {
   express-handlebars(integration with express);
   nodemailer-express-handlebars(integration with nodemailer);
 }
+  backgroud-jobs => {
+    redis - banco de dados não relacional que utiliza chaves > performance
+
+    Bee queue - ferramenta de controle de chaves de auta performance
+  }
