@@ -33,3 +33,12 @@ personalização de email => {
 
     Bee queue - ferramenta de controle de chaves de auta performance
   }
+
+Sentry.io para monitoração de erro =>
+   express-async-errors para o express enxergar o erro do codigo async
+    Youch para tratação de erro
+
+Variaveis ambiente => {
+  dentro de .env
+  para usar yarn add dotenv
+}
