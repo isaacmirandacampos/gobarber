@@ -5,13 +5,10 @@ Existe um conceito chamado singleton que no Node.js é muito forte e consiste em
 
 
 # Bibliotecas:
-
-
-.
-.
-.
-.
-.
+  express para construção de rotas
+  docker para construir containers dos bancos de dados utilizado
+  date-fns para formatação de data
+  yup para validação de entrada pelos controllers
 
 envio de email => {
   nodemailer = ferramentas({
