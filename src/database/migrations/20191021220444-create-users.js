@@ -7,6 +7,13 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      avatar_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: 'files', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'SET NULL',
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
